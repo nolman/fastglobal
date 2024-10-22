@@ -46,7 +46,7 @@ defmodule FastGlobal do
   @spec do_get(atom, any) :: any
   defp do_get(module, default) do
     try do
-      module.value
+      module.value()
     catch
       :error, :undef ->
         default
